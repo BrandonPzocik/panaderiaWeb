@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panadería La Espiga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1b3a8a; --azul-oscuro:#12255c; --manteca:#ffd96a; --claro:#f7f9fc; --tinta:#1a1f2e;
+  --fondo:#f7f9fc; --texto:#1a1f2e; --acento:#1b3a8a;
+  --fuente:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--fondo:#0d1220; --texto:#e8ecf6; --acento:#8ea8ff}
+}
+:root[data-theme="dark"]{--fondo:#0d1220; --texto:#e8ecf6; --acento:#8ea8ff}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:var(--fuente);color:var(--texto);background:var(--fondo);line-height:1.6}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--manteca);outline-offset:3px}
+
+.barra{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:1rem clamp(1rem,5vw,4rem);background:var(--azul-oscuro);color:var(--claro)}
+.logo{font-weight:800;font-size:1.4rem;text-decoration:none}
+.barra nav{display:flex;gap:1.5rem}
+.barra nav a{text-decoration:none}
+.barra nav a:hover{text-decoration:underline}
+
+.portada{background:var(--azul);color:var(--claro);padding:clamp(3rem,12vw,8rem) clamp(1rem,5vw,4rem)}
+.portada h1{font-size:clamp(2.5rem,9vw,6rem);font-weight:800;line-height:1;max-width:14ch;margin-bottom:1.5rem}
+.portada p{max-width:48ch;font-size:1.15rem;margin-bottom:2rem}
+.boton{display:inline-block;padding:.8rem 1.6rem;background:var(--manteca);color:var(--azul-oscuro);font-weight:700;text-decoration:none;border-radius:999px;transition:transform .15s}
+.boton:hover{transform:translateY(-2px)}
+
+.productos,.horarios{padding:clamp(2.5rem,8vw,5rem) clamp(1rem,5vw,4rem)}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem}
+.productos ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+.productos li{border-top:4px solid var(--acento);padding-top:1rem}
+.productos h3{font-size:1.3rem}
+.precio{display:inline-block;margin-top:.5rem;font-weight:700;color:var(--acento)}
+
+.horarios{background:var(--manteca);color:var(--tinta)}
+.horarios dt{font-weight:700;margin-top:.8rem}
+
+footer{padding:1.5rem clamp(1rem,5vw,4rem);background:var(--azul-oscuro);color:var(--claro);font-size:.95rem}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.boton{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <a class="logo" href="#inicio">La Espiga</a>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="portada" id="inicio">
+    <h1>Pan hecho cada madrugada.</h1>
+    <p>Horneamos con masa madre y harina de molino local. A las 7 de la mañana todo está en el mostrador.</p>
+    <a class="boton" href="#contacto">Hacer un pedido</a>
+  </section>
+
+  <section class="productos" id="productos">
+    <h2>Lo que sale del horno</h2>
+    <ul>
+      <li>
+        <h3>Pan de campo</h3>
+        <p>Corteza gruesa y miga abierta. Dura tres días.</p>
+        <span class="precio">$2.800</span>
+      </li>
+      <li>
+        <h3>Medialunas</h3>
+        <p>De manteca, bien livianas. Se venden por docena.</p>
+        <span class="precio">$6.500</span>
+      </li>
+      <li>
+        <h3>Focaccia de romero</h3>
+        <p>Con aceite de oliva y sal gruesa.</p>
+        <span class="precio">$3.200</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="horarios" id="horarios">
+    <h2>Horarios</h2>
+    <dl>
+      <dt>Lunes a sábado</dt>
+      <dd>7:00 a 13:00 y 17:00 a 20:30</dd>
+      <dt>Domingo</dt>
+      <dd>7:30 a 12:30</dd>
+    </dl>
+  </section>
+</main>
+
+<footer id="contacto">
+  <p>Av. Belgrano 450 · Tel. 3492 000000 · hola@laespiga.example</p>
+</footer>
+
+</body>
+</html>
